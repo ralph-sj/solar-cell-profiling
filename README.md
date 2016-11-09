@@ -1,4 +1,4 @@
-# solar-cell-profiling using a raspberry pi
+# solar-cell-profiling using a low power micro-computer
 Hardware and software for power profiling a solar cell over a range of irradiances using cheap/easy to use hardware and software e.g. low power ADC/op-amps and raspberry pi/arduino 
 
 ## Introduction
