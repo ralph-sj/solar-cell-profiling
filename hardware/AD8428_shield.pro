@@ -2,8 +2,8 @@ EAGLE AutoRouter Statistics:
 
 Job           : /Users/andys-j/Documents/Github/solar-cell-profiling/hardware/AD8428_shield.brd
 
-Start at      : 23:43:32 (09/11/2016)
-End at        : 23:43:34 (09/11/2016)
+Start at      : 12:18:05 (10/11/2016)
+End at        : 12:18:07 (10/11/2016)
 Elapsed time  : 00:00:00
 
 Signals       :     8   RoutingGrid: 9 mil  Layers: 2
