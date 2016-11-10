@@ -28,10 +28,10 @@ i.e. for a gain of 100, RG = 49.4 Ohms
 An alternative is the AD8428 ^[6] which has a fixed gain of 2000
 
 ## Software
-Simpel software running on a low power procesosr is to be created to read sensors and then save data in a remote server. It is designed to run on  the MSP430G2553 launchpad.  This is used due to their availability, ease of use and low power operation
+Simpel software running on a low power procesosr is to be created to read sensors and then save data in a remote server. It is designed to run on  the MSP-EXP430G2 launchpad ^[7],[8],[10].  This is used due to their availability, ease of use and low power operation
  
 ### Development environment
-The Arduino-like Energia development environment was used here due to the ease of use and the widespread availability of libraries.
+The Arduino-like Energia ^[9] development environment was used here due to the ease of use and the widespread availability of libraries.
 
 ## References
 [1](http://makerzone.mathworks.com/resources/build-a-digital-voltmeter-using-raspberry-pi/) Mathworks, "Build a Digital Voltmeter Using Raspberry Pi" (2005)
@@ -40,3 +40,6 @@ The Arduino-like Energia development environment was used here due to the ease o
 [4](http://www.ti.com/lit/an/sbaa090/sbaa090.pdf)
 [5](http://cds.linear.com/docs/en/datasheet/1920f.pdf), LT21920 Datasheet
 [6](http://www.analog.com/media/en/technical-documentation/data-sheets/AD8428.PDF), AD8428
+[7](http://www.ti.com/tool/MSP-EXP430G2), MSP-EXP430G2 homepage
+[9](http://energia.nu/pin-maps/guide_msp430g2launchpad/), Energia for launchpad
+[10](http://www.ti.com/lsds/ti/tools-software/launchpads/launchpads.page), TI Launchpad Homepage
