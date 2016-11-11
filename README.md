@@ -19,12 +19,30 @@ The hardware used here is selected for ease of use and availability, including t
 
 ### MCU
 ### Trans-Impedance Amplifier
-This is used decrease the voltage drop imposed by the use of an ammeter in series within the monitoring circuit.  This allows a 1 Ohmm resistor to be used rather than the higher burden 1k.  As the currents measured here are typically low (uA - mA), to e.g. resolve a 1uA current without gain (i.e. to convert a 1uA current to 1mA - the maximum resolution of the 10-bit ADC used with a 1V reference) a 1K resistor would be needed.  This would then drop the voltage in the circuit by that amount.  By using a 1 Ohm resistor, that burden is reduced to an almost immeasurable 1 uA.
+This is used decrease the voltage drop imposed by the use of an ammeter in series within the monitoring circuit.  This allows a 1 Ohmm resistor to be used rather than the higher burden 1k.  As the currents measured here are typically low (uA - mA), to e.g. resolve a 1uA current without gain (i.e. to convert a 1uA current to 1mA - the maximum resolution of the 10-bit ADC used with a 1V reference) a 1K resistor would be needed.  This would then drop the voltage in the circuit by that amount.  By using a 1 Ohm resistor, that burden is reduced to an almost immeasurable 1 uA ^[11].  The burden voltage is 10µV/µA and 10µV/nA on the lower ranges and varies on the mA range due to the switch resistance.  
+
+**Ranges:**
+
+- Current ranges:
+    1. +/- 0-300mA (70µV / mA burden voltage typical) - max 21mV
+    2. +/- 0-1000µA (10µV / uA burden voltage) - max 10 mV
+    3. +/- 0-1000nA (10µV / nA burden voltage) - max 10 mV
+- Output Voltage Units:
+    1. 1mV/mA - max 3V
+    2. 1mV/µA - max 1V
+    3. 1mV/nA - max 1V
+- Effective gain 100 (I think)
+
+
 
 ### Instrumentation amplifier
 The **LT2910** instrumentation amplifier is used to amplify the signal from the trans-impedance amplifier.  The gain is variable from 1 to 10,00 and is determined by the value of the gain resistor, RG, connected across pins 1-8.  The gain for a given value of RG is given by
 G = 1 + 49.4/RG
-i.e. for a gain of 100, RG = 49.4 Ohms
+i.e. for the following gain values:
+Gain = 1000, RG = 49.4 Ohms
+Gain = 100, RG = 499 Ohms
+Gain = 10, RG = 5.489 kOhms
+
 An alternative is the AD8428 ^[6] which has a fixed gain of 2000
 
 ## Software
@@ -43,3 +61,4 @@ The Arduino-like Energia ^[9] development environment was used here due to the e
 [7](http://www.ti.com/tool/MSP-EXP430G2), MSP-EXP430G2 homepage
 [9](http://energia.nu/pin-maps/guide_msp430g2launchpad/), Energia for launchpad
 [10](http://www.ti.com/lsds/ti/tools-software/launchpads/launchpads.page), TI Launchpad Homepage
+[11](http://alternatezone.com/electronics/ucurrent/uCurrentArticle.pdf), uCurrent infor sheet
