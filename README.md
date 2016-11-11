@@ -13,7 +13,7 @@ The input impedance of the ADC determines the current sunk by the ADC from the s
 
 ## Hardware
 
-The hardware used here is selecte for ease of use and availability, including the procesor, sensors and other peripherals. It consists of: 
+The hardware used here is selected for ease of use and availability, including the procesor, sensors and other peripherals. It consists of: 
 - MSP430G2553 Launchpad.  This is the demo board for the G2553 variant of the popular MSP430 MCU.
 - LT1920 instrumentation amplifier.
 
