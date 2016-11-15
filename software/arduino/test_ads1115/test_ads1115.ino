@@ -1,8 +1,8 @@
 #include <Wire.h>
 #include <Adafruit_ADS1015.h>
 
-// Adafruit_ADS1115 ads;  /* Use this for the 16-bit version */
-Adafruit_ADS1015 ads;     /* Use thi for the 12-bit version */
+ Adafruit_ADS1115 ads;  /* Use this for the 16-bit version */
+// Adafruit_ADS1015 ads;     /* Use thi for the 12-bit version */
 
   const int analogOutPin = 3; // Analog output pin
   int outputValue = 0;        // value output to the PWM (analog out)
@@ -39,7 +39,7 @@ void setup(void)
 void loop(void) 
 {
   analogWrite(analogOutPin, outputValue); // set analog pin voltage
-  if (outputValue > 100)  // if it exceeds limit, restart from zero
+  if (outputValue > 200)  // if it exceeds limit, restart from zero
   {
     outputValue = 0;
   }
