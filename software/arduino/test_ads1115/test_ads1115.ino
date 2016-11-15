@@ -38,31 +38,34 @@ void setup(void)
 
 void loop(void) 
 {
-  analogWrite(analogOutPin, outputValue);
-  outputValue += 1;
-  if (outputValue > 100)
+  analogWrite(analogOutPin, outputValue); // set analog pin voltage
+  if (outputValue > 100)  // if it exceeds limit, restart from zero
   {
     outputValue = 0;
   }
-
+  outputValue += 1;
+  
   int16_t adc0, adc1, adc2, adc3;
-  long ADC;
+  int16_t adc_sum, adc;
 
   adc0 = ads.readADC_SingleEnded(0);
+  delay(100);
   adc1 = ads.readADC_SingleEnded(0);
+  delay(100);
   adc2 = ads.readADC_SingleEnded(0);
+  delay(100);
   adc3 = ads.readADC_SingleEnded(0);
 
-  ADC = adc0 + adc1; // + adc2 + adc3; // sum readings
+  adc_sum = adc0 + adc1 + adc2 + adc3; // sum readings
 
-  ADC = ADC >> 1; // divide by 4
+  adc = adc_sum >> 2; // divide by 4
   
 //  adc1 = ads.readADC_SingleEnded(1);
 //  adc2 = ads.readADC_SingleEnded(2);
 //  adc3 = ads.readADC_SingleEnded(3);
 
-//  Serial.println(ADC);
-  Serial.println(adc0);
+  Serial.println(adc);
+//  Serial.println(adc0);
 
 //  Serial.print("AIN1: "); Serial.println(adc1);
 //  Serial.print("AIN2: "); Serial.println(adc2);
