@@ -6,7 +6,7 @@
 
 unsigned char bh1750_address = 35;
 
-unsigned int current_gain = 16;
+unsigned int current_gain = 4;
 
 void setup(void)
 {
@@ -57,6 +57,10 @@ void loop(void)
 
   // read current
  switch (current_gain) {
+    case 2:
+      ads.setGain(GAIN_TWO);      // 2x gain   +/- 2.048V  1 bit = 0.0625mV
+      multiplier = 0.0625F;      // 2x gain   +/- 2.048V  1 bit = 0.0625mV
+      break;
     case 4:
       ads.setGain(GAIN_FOUR);       // 4x gain   +/- 1.024V  1 bit = 0.03125mV
       multiplier = 0.03125F;  // 4x gain   +/- 1.024V  1 bit = 0.03125mV
