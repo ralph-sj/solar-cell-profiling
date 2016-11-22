@@ -6,7 +6,7 @@
 
 unsigned char bh1750_address = 35;
 
-unsigned int current_gain = 4;
+unsigned int current_gain = 8;
 
 void setup(void)
 {
