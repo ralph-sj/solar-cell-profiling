@@ -15,7 +15,13 @@ clear
 %% Initialize variables.
 % filename = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumentation\public\solar-cell-profiling\data\capture-2016-11-21.dat';
 % filename = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumentation\public\solar-cell-profiling\data\IXYS KXOB22-04X3F.dat'
-filename = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumentation\public\solar-cell-profiling\data\capture-2016-11-22';
+% filename = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumentation\public\solar-cell-profiling\data\capture-2016-11-22';
+%
+filepath = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumentation\public\solar-cell-profiling\data\';
+% file = 'capture-2016-11-22'; % from AM-5610CAR.dat
+file = 'capture-2016-11-22_1'; % AM-1417CA
+% file = 'AM-5610CAR';
+filename = [filepath, file, '.dat'];
 delimiter = ',';
 startRow = 4;
 
@@ -58,14 +64,14 @@ clearvars filename delimiter startRow formatSpec fileID dataArray ans;
 %% CALCULATE
 Time = (date-date(1)) * 24; % convert to hours from start
 StartTime = datestr(date(1)) 
-Power = (current .* voltage)/1e6;
-Impedance = voltage ./ current;
+Power = (current .* voltage)/1e3;   % in uW
+Impedance = voltage ./ (current/1e6); % in Ohms
 
 % time
 figure
 subplot(2,2,1)
 plot(Time, current, '.');
-ylabel('Current (mA)')
+ylabel('Current (\mu A)')
 xlabel('Time (hours)');
 
 subplot(2,2,2)
@@ -87,7 +93,7 @@ xlabel('Time (hours)');
 figure
 subplot(3,1,1)
 plot(light,current, '.');
-ylabel('Current (mA)')
+ylabel('Current (\mu A)')
 set(gca,...
 'XTickLabel','')
 set(gca, 'XTick', []);
@@ -108,4 +114,5 @@ ylabel('Impedance (\Omega)')
 figure
 plot(light, Power) %, '.')
 xlabel('Light (lux)');
-ylabel('Power (W)')
+ylabel('Power (\mu W)')
+title(file);
