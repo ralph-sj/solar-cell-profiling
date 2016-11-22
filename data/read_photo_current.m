@@ -15,7 +15,7 @@ clear
 % filename = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumentation\public\solar-cell-profiling\data\capture-2016-11-16.txt';
 % filename = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumentation\public\solar-cell-profiling\data\capture-2016-11-17'; %16.txt';
 % filename = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumentation\public\solar-cell-profiling\data\capture-2016-11-18.dat';
-
+filename = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumentation\public\solar-cell-profiling\data\capture-2016-11-22';
 delimiter = ',';
 
 %% Format string for each line of text:
