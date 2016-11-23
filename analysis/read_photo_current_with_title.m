@@ -18,20 +18,23 @@ clear
 % filename = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumentation\public\solar-cell-profiling\data\capture-2016-11-22';
 %
 % WINDOWS
-% filepath = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumentation\public\solar-cell-profiling\data\';
+filepath = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumentation\private\data\';
 % MAC
-filepath = '/Volumes/iMac Data/Documents/Dropbox/02 UNIVERSITY/02 Technical/07 Instrumentation/private/data/';
-% file = 'capture-2016-11-22'; % from AM-5610CAR.dat
-% file = 'capture-2016-11-22_1'; % AM-1417CA
+% filepath = '/Volumes/iMac Data/Documents/Dropbox/02 UNIVERSITY/02 Technical/07 Instrumentation/private/data/';
+
+
 % file = 'AM-5610CAR';
-file = 'AM-1417CA';
+% file = 'AM-1417CA';
 % file = 'CBC-PV-01N';
 % file = 'KXOB22-04X3F';
 % file = 'KXOB22-12X1L'; % not yet profiled
 
+% file = 'capture-2016-11-22'; % from AM-5610CAR.dat
+file = 'capture-2016-11-22_1'; % AM-1417CA
 
 
 filename = [filepath, file, '.dat'];
+
 delimiter = ',';
 startRow = 4;
 
