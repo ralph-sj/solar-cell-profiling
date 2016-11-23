@@ -25,6 +25,12 @@ filepath = '/Volumes/iMac Data/Documents/Dropbox/02 UNIVERSITY/02 Technical/07 I
 % file = 'capture-2016-11-22_1'; % AM-1417CA
 % file = 'AM-5610CAR';
 file = 'AM-1417CA';
+% file = 'CBC-PV-01N';
+% file = 'KXOB22-04X3F';
+% file = 'KXOB22-12X1L'; % not yet profiled
+
+
+
 filename = [filepath, file, '.dat'];
 delimiter = ',';
 startRow = 4;
