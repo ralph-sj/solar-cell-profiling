@@ -30,7 +30,8 @@ filepath = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumenta
 % file = 'KXOB22-12X1L'; % not yet profiled
 
 % file = 'capture-2016-11-22'; % from AM-5610CAR.dat
-file = 'capture-2016-11-22_1'; % AM-1417CA
+% file = 'capture-2016-11-22_1'; % AM-1417CA
+file = 'capture-2016-11-23';    %AM-5412CAR
 
 
 filename = [filepath, file, '.dat'];

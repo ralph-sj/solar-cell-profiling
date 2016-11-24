@@ -6,7 +6,7 @@
 
 unsigned char bh1750_address = 35;
 
-unsigned int current_gain = 8;
+unsigned int current_gain = 0;
 
 void setup(void)
 {
@@ -57,6 +57,14 @@ void loop(void)
 
   // read current
  switch (current_gain) {
+    case 0:
+      ads.setGain(GAIN_TWOTHIRDS);       // 2/3x gain +/- 6.144V  1 bit = 0.1875mV (default)
+      multiplier = 0.1875F;    // 2/3x gain +/- 6.144V  1 bit = 0.1875mV (default)
+      break;
+    case 1:
+      ads.setGain(GAIN_ONE);      // 1x gain   +/- 4.096V  1 bit = 0.125mV
+      multiplier = 0.125F;      // 1x gain   +/- 4.096V  1 bit = 0.125mV
+      break;
     case 2:
       ads.setGain(GAIN_TWO);      // 2x gain   +/- 2.048V  1 bit = 0.0625mV
       multiplier = 0.0625F;      // 2x gain   +/- 2.048V  1 bit = 0.0625mV
@@ -75,14 +83,14 @@ void loop(void)
       break;
     default:
       ads.setGain(GAIN_TWOTHIRDS);       // 2/3x gain +/- 6.144V  1 bit = 0.1875mV (default)
-      multiplier = 0.03125F;    // 2/3x gain +/- 6.144V  1 bit = 0.1875mV (default)
+      multiplier = 0.1875F;    // 2/3x gain +/- 6.144V  1 bit = 0.1875mV (default)
       break;
   }
   results = ads.readADC_Differential_0_1();  
   
   // Read voltage
-  ads.setGain(GAIN_TWO);  // 2x gain   +/- 2.048V  1 bit = 0.0625mV
-  float   multiplier1 = 0.0625F;    // 2x gain   +/- 2.048V  1 bit = 0.0625mV
+  ads.setGain(GAIN_ONE);  
+  float   multiplier1 = 0.125F;
   results1 = ads.readADC_Differential_2_3();  
 
     
@@ -91,5 +99,5 @@ void loop(void)
   Serial.print(results * multiplier); // current
   Serial.print(",");
   Serial.println(results1 * multiplier1); // voltage
-  delay(5000);
+  delay(1000);
 }
