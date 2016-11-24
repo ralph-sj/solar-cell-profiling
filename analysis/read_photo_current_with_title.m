@@ -1,6 +1,6 @@
 %% START
 close all
-clear
+clearvars -except file filestruct
 
 %% Import data from text file.
 % Script for importing data from the following text file:
@@ -34,13 +34,15 @@ else
     break
 end
 
+% filestruct = {}; % can use this to put filename into
 
 % file = 'AM-5610CAR';
 % file = 'AM-1417CA';
 % file = 'CBC-PV-01N';
 % file = 'KXOB22-04X3F';
-file = 'AM-5412CAR';
+% file = 'AM-5412CAR';
 % file = 'KXOB22-12X1L'; % not yet profiled
+
 
 % file = 'capture-2016-11-22'; % from AM-5610CAR.dat
 % file = 'capture-2016-11-22_1'; % AM-1417CA
@@ -89,7 +91,8 @@ clearvars filename delimiter startRow formatSpec fileID dataArray ans;
 
 %% CALCULATE
 Time = (date-date(1)) * 24; % convert to hours from start
-StartTime = datestr(date(1)) 
+StartTime = datestr(date(1))
+EndTime = datestr(date(end)) 
 Power = current .* voltage/1e3;   % in uW (voltage is in mV)
 Impedance = voltage ./ (current/1e6); % in Ohms
 
