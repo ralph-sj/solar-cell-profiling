@@ -27,6 +27,7 @@ filepath = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumenta
 % file = 'AM-1417CA';
 % file = 'CBC-PV-01N';
 % file = 'KXOB22-04X3F';
+file = 'AM-5412CAR';
 % file = 'KXOB22-12X1L'; % not yet profiled
 
 % file = 'capture-2016-11-22'; % from AM-5610CAR.dat
@@ -93,35 +94,35 @@ ylabel('Voltage (mV)')
 xlabel('Time (hours)');
 
 subplot(2,2,3)
-plot(Time, Impedance, '.');
-ylabel('Impedance (\Omega)')
-xlabel('Time (hours)');
-
-subplot(2,2,4)
 plot(Time, light, '.');
 ylabel('Light (lux)')
 xlabel('Time (hours)');
 
+subplot(2,2,4)
+plot(Time, Power, '.');
+ylabel('Power (\mu W)')
+xlabel('Time (hours)');
+
 % light
 figure
-subplot(3,1,1)
+subplot(2,1,1)
 plot(light,current, '.');
 ylabel('Current (\mu A)')
 set(gca,...
 'XTickLabel','')
 set(gca, 'XTick', []);
 
-subplot(3,1,2)
+subplot(2,1,2)
 plot(light,voltage, '.');
 ylabel('Voltage (mV)')
 set(gca,...
 'XTickLabel','')
 set(gca, 'XTick', []);
 
-subplot(3,1,3)
-plot(light,Impedance, '.');
-xlabel('Light (lux)');
-ylabel('Impedance (\Omega)')
+% subplot(3,1,3)
+% plot(light,Impedance, '.');
+% xlabel('Light (lux)');
+% ylabel('Impedance (\Omega)')
 
 
 figure
