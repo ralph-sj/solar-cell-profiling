@@ -17,10 +17,22 @@ clear
 % filename = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumentation\public\solar-cell-profiling\data\IXYS KXOB22-04X3F.dat'
 % filename = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumentation\public\solar-cell-profiling\data\capture-2016-11-22';
 %
-% WINDOWS
-filepath = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumentation\private\data\';
-% MAC
-% filepath = '/Volumes/iMac Data/Documents/Dropbox/02 UNIVERSITY/02 Technical/07 Instrumentation/private/data/';
+
+% set filepath according to system
+if ismac
+    % Code to run on Mac plaform
+    filepath = '/Volumes/iMac Data/Documents/Dropbox/02 UNIVERSITY/02 Technical/07 Instrumentation/private/data/';
+elseif isunix
+    % Code to run on Linux plaform
+    disp('Is this Unix?')
+elseif ispc
+    % Code to run on Windows platform
+    filepath = 'C:\Users\Ralph S-J\Dropbox\02 UNIVERSITY\02 Technical\07 Instrumentation\private\data\';
+else
+    disp('Platform not supported')
+    disp('EXITING NOW')
+    break
+end
 
 
 % file = 'AM-5610CAR';
@@ -31,8 +43,8 @@ file = 'AM-5412CAR';
 % file = 'KXOB22-12X1L'; % not yet profiled
 
 % file = 'capture-2016-11-22'; % from AM-5610CAR.dat
-file = 'capture-2016-11-22_1'; % AM-1417CA
-
+% file = 'capture-2016-11-22_1'; % AM-1417CA
+% file = 'capture-2016-11-23'; % AM-5412CAR
 
 filename = [filepath, file, '.dat'];
 
